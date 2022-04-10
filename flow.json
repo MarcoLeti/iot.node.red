@@ -1,1 +1,90 @@
-[]
+[
+    {
+        "id": "ad3b2f11f61f334b",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1f171d11e4178d99",
+        "type": "mqtt-broker",
+        "name": "letico-home-broker",
+        "broker": "10.0.0.200",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "82daadc7f93fdb90",
+        "type": "mqtt in",
+        "z": "ad3b2f11f61f334b",
+        "name": "",
+        "topic": "home/livingroom/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1f171d11e4178d99",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 260,
+        "wires": [
+            [
+                "dcfae8c839982486"
+            ]
+        ]
+    },
+    {
+        "id": "dcfae8c839982486",
+        "type": "json",
+        "z": "ad3b2f11f61f334b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "821ef84e844401f9"
+            ]
+        ]
+    },
+    {
+        "id": "821ef84e844401f9",
+        "type": "debug",
+        "z": "ad3b2f11f61f334b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 260,
+        "wires": []
+    }
+]
